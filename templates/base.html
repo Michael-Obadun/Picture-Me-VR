@@ -1,0 +1,92 @@
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Added discription and keywords meta tags-->
+    <meta name="description"
+        content="A webite that allows users to upload/post, comment on Users posts. As well plan events with other VR users">
+    <meta name="keywords"
+        content="Vr, Virtual reality, images, Vr images, comment, upload, meetings, events,  Playstion VR, Apple vision Pro, quest 2, quest 3">
+    <title>The VR Hub</title>
+    <!--This is our favicon-->
+    <link rel="icon" type="image.jpg" href="assets/images/">
+    <!--This is a link to google fonts-->
+    <script src="https://kit.fontawesome.com/d15c2a037f.js" crossorigin="anonymous"></script>
+    <!--This is mu link to bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!--This is my top navbar-->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand" aria-current="page" href="#"><i class="fa-solid fa-house"></i></a>
+            <a class="navbar-brand" href="#"><img src="assets/images/vrhubfavicon.jpeg" alt="" width="75"
+                    height="60"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNav">
+                <ul class="navbar-nav ms-auto text-start">
+                    <li class="nav-item ms-auto text-start"><a class="nav-link" href="/about">Register</a></li>
+                    <li class="nav-item ms-auto text-start"><a class="nav-link" href="/about">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-shrink-0 main-bg">
+
+        {% block head %}
+        <!-- Content Goes here -->
+        {% endblock %}
+
+
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+
+    </main>
+
+    <!--This is my Footer-->
+    <div class="footer-container">
+        <footer class="container-fluid">
+            <div class="row py-2 px-md-5 px-sm-3 d-flex align-items-center">
+                <div class="col-sm-6 ">
+                    <p>For more Information <br> Contact me -</p>
+                </div>
+
+                <!--This social media-->
+                <div class="d-flex flex-column align-items-center">
+                    <ul class="navbar-nav d-flex flex-row h4">
+                        <li class="nav-item px-3"><a class="nav-link p-0" href="https://www.facebook.com/"
+                                target="_blank" rel="noopener noreferrer" aria-label="facebook">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a></li>
+                        <li class="nav-item px-3"><a class="nav-link p-0" href="https://x.com/?lang=en" target="_blank"
+                                rel="noopener noreferrer" aria-label="facebook">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a></li>
+                        <li class="nav-item px-3"><a class="nav-link p-0" href="https://www.instagram.com/"
+                                target="_blank" rel="noopener noreferrer" aria-label="facebook">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    </footer>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
