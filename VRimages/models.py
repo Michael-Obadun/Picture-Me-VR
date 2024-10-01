@@ -13,7 +13,23 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
 
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
 
+
+class Meeting(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="meets")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="organiser")
+    platform = models.CharField(max_length=200, unique=True)
+    venue = models.CharField(max_length=200, unique=True)
+    discription = models.TextField()
+    start_time = models.DateTimeField()
 
 
 
