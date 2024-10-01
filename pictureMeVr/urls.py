@@ -19,6 +19,7 @@ from django.urls import path
 from VRimages.views import my_vrImages
 
 urlpatterns = [
+    path('summernote/', include('django_summernote.urls')),
     path('VRimages/', my_vrImages, name='VRimages'),
     path('admin/', admin.site.urls),
 ]
