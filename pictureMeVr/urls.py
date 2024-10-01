@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from VRimages.views import my_vrImages
+from django.urls import path, include
 
 urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
