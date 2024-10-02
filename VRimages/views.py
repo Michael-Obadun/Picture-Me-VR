@@ -24,12 +24,12 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
 
     return render(
         request,
-        "blog/post_detail.html",
+        "VRimages/post_detail.html",
         {"post": post},
     )
 
