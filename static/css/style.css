@@ -1,17 +1,21 @@
+
 body{
     background-color: rgb(245, 237, 237);
     font-family: Georgia, 'Times New Roman', Times, serif;
     
 }
+
 .card {
     border-style: double;
     border-width: 2px;
     border-color: rgb(127, 161, 195);
     background-color: rgb(226, 218, 214);
 }
+
 .image-container {
     position: relative;
 }
+
 .image-flash {
     position: absolute;
     bottom: 5%;
@@ -19,14 +23,68 @@ body{
     left: -2px;
     background-color: rgb(127, 161, 195);
 }
+
 .scale {
     width: 100%;
     height: auto;
 }
+
 .author {
     color: black;
     margin: 4px;
     text-transform: uppercase;
+}
+
+.post-link {
+    text-decoration: none;
+    color: rgb(100, 130, 171);
+}
+
+.post-link:hover,
+.page-link {
+    color: rgb(65, 73, 101);
+}
+
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: #f7fbfe;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: rgb(100, 130, 171);
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: rgb(100, 130, 171);
+    color: black;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: rgb(100, 130, 171);
+    text-decoration: underline;
+}
+
+.btn-delete {
+    color: #fff;
+    background: rgb(100, 130, 171);
+}
+
+.faded {
+    color: rgb(100, 130, 171);
 }
 
 
