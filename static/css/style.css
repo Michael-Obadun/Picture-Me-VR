@@ -5,6 +5,39 @@ body{
     
 }
 
+.introImage{
+    height: 60vh;
+    width: 100%;
+    background: rgb(226, 218, 214);
+}
+
+.introParagraph{
+    justify-content: center;
+    text-align: center;
+    margin-top: 3vh;
+    font-weight: 600;
+    color: rgb(100, 130, 171);
+    color:#ffffff;
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-shadow: 0px 7px 7px black;
+    font-weight: 600;
+}
+
+.userPost{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    color: rgb(100, 130, 171);
+    color:#ffffff;
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-shadow: 0px 7px 7px black;
+    font-weight: 600;
+}
+
+
+
 .card {
     border-style: double;
     border-width: 2px;
