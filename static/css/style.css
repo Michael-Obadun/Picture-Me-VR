@@ -1,3 +1,43 @@
 body{
-    background-color: brown;
+    background-color: rgb(245, 237, 237);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
 }
+.card {
+    border-style: double;
+    border-width: 2px;
+    border-color: rgb(127, 161, 195);
+    background-color: rgb(226, 218, 214);
+}
+.image-container {
+    position: relative;
+}
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: rgb(127, 161, 195);
+}
+.scale {
+    width: 100%;
+    height: auto;
+}
+.author {
+    color: black;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
