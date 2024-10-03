@@ -6,16 +6,18 @@
 <div class="introImage">
     <img src="{% static 'images/hero1.png' %}" class="d-block w-10" alt="group picture of vr avatars">
 </div>
-<!-- heading image -->
-<div class="introParagraph">
+ <!-- heading image -->
+ <div class="introParagraph">
     <h1>
-        Tired of constantly having to erase data from your Oculus Quest
-        Headset to gree up storage space for your VR games or images. Or just
-        looking for one ideal place to save all your VR images. Then VR images
-        is the website for you.
+      Tired of constantly having to erase data from your Oculus Quest
+      Headset to gree up storage space for your VR games or images. Or just
+      looking for one ideal place to save all your VR images. Then VR images
+      is the website for you.
     </h1>
-</div>
-<h2 class="userPost">USER POST</h2>
+  </div>
+  <!-- heading image -->
+  
+  <h2 class="userPost">USER POST</h2>
 {% endblock %}
 
 
@@ -33,11 +35,11 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
+                                {% if "placeholder" in post.banner.url %}
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src=" {{ post.banner.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
