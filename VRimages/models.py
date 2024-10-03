@@ -13,6 +13,12 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.title} | Posted by {self.author}"
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -21,6 +27,12 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"
 
 
 class Meeting(models.Model):
@@ -32,6 +44,10 @@ class Meeting(models.Model):
     discription = models.TextField()
     start_time = models.DateTimeField()
 
+    class Meta:
+        ordering = ["-start_time"]
 
+    def __str__(self):
+        return f"Meeting {self.discription} created by {self.author}"
 
 
