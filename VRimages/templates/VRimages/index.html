@@ -5,8 +5,12 @@
 {% block head %}
 
 {% if user.is_authenticated %}
-    <h1>Create a post</h1>
-    <button>upload here</button> 
+    <h1 class="createPost">CREATE A POST</h1>
+    <div class="createPostBtnDiv">
+        <button class="createPostBtn">UPLOAD POST</button> 
+    </div>
+    <hr>
+    <hr>
 {% else %}
 <div class="introParagraph">
     <h1>
