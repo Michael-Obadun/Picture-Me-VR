@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from .models import Post, Comment, Meeting
-from .forms import CommentForm
+from .forms import CommentForm, MeetingForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
@@ -32,6 +32,7 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.all().count()
 
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -43,8 +44,8 @@ def post_detail(request, slug):
             request, messages.SUCCESS,
             'Comment submitted'
         )
-
     comment_form = CommentForm()
+
 
     return render(
         request,
@@ -100,3 +101,7 @@ def comment_delete(request, slug, comment_id):
 
 
 
+
+
+
+    

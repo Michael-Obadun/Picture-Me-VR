@@ -35,6 +35,72 @@
       </div>
     </div>
   </div>
+
+
+
+<!-- Displaying count of meetings -->
+<div class="row">
+  <div class="col-12">
+    <strong class="text-secondary">
+      <i class="far fa-comments"></i> {{ meetings_count }}
+    </strong>
+  </div>
+  <div class="col-12">
+    <hr>
+  </div>
+</div>
+<!-- Displaying meetings -->
+<div class="row">
+  <div class="col-md-8 card mb-4  mt-3 ">
+    <h3>Meetings:</h3>
+    <div class="card-body">
+      <!-- We want a for loop inside the empty control tags
+        to iterate through each meeting in meetings -->
+      {% for meeting in meetings %}
+      <div class="p-2 comments">
+    
+        <p class="font-weight-bold">
+          {{ meeting.author }}
+          <span class="font-weight-normal">
+            {{ meeting.created_on }}
+          </span> wrote:
+        </p>
+        <div id="meeting{{ meeting.id }}">
+          {{ meeting.discription | linebreaks }}
+        </div>
+        {% if user.is_authenticated and meeting.author == user %}
+          <button class="btn btn-delete" meeting_id="{{ meeting.id }}">Delete</button>
+          <button class="btn btn-edit" meeting_id="{{ meeting.id }}">Edit</button>
+          {% endif %}
+      </div>
+      <!-- Our for loop ends here -->
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Creating New Meetings -->
+  <div class="col-md-4 card mb-4 mt-3">
+    <div class="card-body">
+      {% if user.is_authenticated %}
+      <h3>Create a meeting:</h3>
+      <p>Posting as: {{ user.username }}</p>
+      <form id="meetingForm" method="post"
+        style="margin-top: 1.3em;">
+        {{ meeting_form | crispy }}
+        {% csrf_token %}
+        <button id="submitButton" type="submit"
+          class="btn btn-signup btn-lg">Submit</button>
+      </form>
+      {% else %}
+      <p>Log in to Create a meeting</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+
+
   <!-- Displaying count of comments -->
   <div class="row">
     <div class="col-12">

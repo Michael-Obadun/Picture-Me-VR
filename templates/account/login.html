@@ -1,15 +1,18 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% load i18n %}
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
+{% block head %}
 
+{% endblock %}
 
 
 {% block content %}
+<img src="{% static 'images/meta-horizon-world-1.jpg' %}" class="d-block w-10" alt="group picture of vr avatars">
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
