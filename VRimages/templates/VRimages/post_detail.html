@@ -83,7 +83,7 @@
       {% if user.is_authenticated %}
       <h3>Create a meeting:</h3>
       <p>Posting as: {{ user.username }}</p>
-      <form id="meetingForm" method="post"
+      <form id="meetingForm" method="post" action="{% url 'create_meeting' post.slug %}"
         style="margin-top: 1.3em;">
         {{ meeting_form | crispy }}
         {% csrf_token %}

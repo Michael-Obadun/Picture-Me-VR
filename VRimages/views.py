@@ -45,7 +45,7 @@ def post_detail(request, slug):
             'Comment submitted'
         )
     comment_form = CommentForm()
-
+    meeting_form =MeetingForm()
 
     return render(
         request,
@@ -54,8 +54,25 @@ def post_detail(request, slug):
         "comments": comments,
         "comment_count": comment_count,
         "comment_form": comment_form,
+        "meeting_form": meeting_form,
         }
     )
+
+def create_meeting(request,slug):
+    if request.method == "POST":
+        post = get_object_or_404(queryset, slug=slug)
+        meeting_form = MeetingForm(data=request.POST)
+        if meeting_form.is_valid():
+            meeting = meeting_form.save(commit=False)
+            meeting.author = request.user
+            meeting.post = post
+            meeting.save()
+            messages.add_message(
+            request, messages.SUCCESS,
+            'Meeting submitted'
+        )
+        return(HttpResponseRedirect(reverse("post_detail",)))
+
 
 
 def comment_edit(request, slug, comment_id):
