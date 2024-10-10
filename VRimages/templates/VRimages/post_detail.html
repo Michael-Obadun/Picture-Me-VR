@@ -65,9 +65,12 @@
             {{ meeting.created_on }}
           </span> wrote:
         </p>
+        <p>Platform {{ meeting.platform }}</p>
+        <p>Venue: {{ meeting.venue }}</p>
         <div id="meeting{{ meeting.id }}">
           {{ meeting.discription | linebreaks }}
         </div>
+        <p>Start Time {{ meeting.start_time }}</p>
         {% if user.is_authenticated and meeting.author == user %}
           <button class="btn btn-delete" meeting_id="{{ meeting.id }}">Delete</button>
           <button class="btn btn-edit" meeting_id="{{ meeting.id }}">Edit</button>
